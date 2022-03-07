@@ -148,24 +148,34 @@ public class AdministrativeOperationsImplTest {
         emeka.isCheckOut();
 
 
-        String expected = "1Steve 2Emeka 3Sade 4Tola";
-        String actualSequence = "";
-        int count = 1;
 
-//        Customer customer = store.getCartListQueue().poll();
-//        assertEquals(customer.getFirstName(), steve.getFirstName());
+        Customer customer = store.getCartListQueue().poll();
+        assertEquals(customer.getFirstName(), steve.getFirstName());
+
+        Customer customer1 = store.getCartListQueue().poll();
+        assertEquals(customer1.getFirstName(), emeka.getFirstName());
+
+        Customer customer2 = store.getCartListQueue().poll();
+        assertEquals(customer2.getFirstName(), sade.getFirstName());
+
+        Customer customer3 = store.getCartListQueue().poll();
+        assertEquals(customer3.getFirstName(), tola.getFirstName());
+
+//          ALTERNATIVE WAY TO TEST
+//        String expected = "1Steve 2Emeka 3Sade 4Tola";
+//        String actualSequence = "";
+//        int count = 1;
+
+
+//        while (!store.getCartListQueue().isEmpty()){
+//            Customer customer = store.getCartListQueue().poll();
 //
-//        Customer customer1 = store.getCartListQueue().poll();
-//        assertEquals(customer1.getFirstName(), emeka.getFirstName());
+//            actualSequence +=count+customer.getFirstName()+" ";
+//            count++;
+//        }
+//
+//        System.out.println(actualSequence);
+//        assertEquals(expected, actualSequence.trim());
 
-        while (!store.getCartListQueue().isEmpty()){
-            Customer customer = store.getCartListQueue().poll();
-
-            actualSequence +=count+customer.getFirstName()+" ";
-            count++;
-        }
-
-        System.out.println(actualSequence);
-        assertEquals(expected, actualSequence.trim());
     }
 }

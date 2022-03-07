@@ -12,6 +12,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.concurrent.CompletableFuture;
+import java.util.stream.Stream;
 
 public class AdministrativeOperationsImpl implements AdministrativeOperations {
 
@@ -50,6 +52,14 @@ public class AdministrativeOperationsImpl implements AdministrativeOperations {
 
 
     }
+
+//    public Stream<CompletableFuture<Customer> > sellByThread(Staff staff, Store store ){
+//        var thread = store.getCartListQueue();
+//
+//        return  thread.stream()
+//
+//    }
+
 
     @Override
     public String sellProductsInCart(Store company, Staff staff, Customer customer) throws NotAuthorizedException, InvalidOperationException {
